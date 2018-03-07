@@ -1,0 +1,22 @@
+<head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        
+        </head>
+        <body>
+<div class="jumbotron text-xs-center" style="margin: auto; padding: 10em; text-align: center!important;">
+        <h1 class="display-3">Thank You!</h1>
+        <p class="lead"><strong>Dear <%= user.fullName%></strong> <br>
+             we appreciate your time and feedback</p>
+             <p class="bg-info"><%= user.feedback %> </p>
+<hr>
+<hr>
+        <p>
+            Have a great day
+        </p>
+        <p class="lead">
+          <a class="btn btn-primary btn-sm" href="/" role="button">Logout</a>
+        </p>
+      </div>
+      </body>

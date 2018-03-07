@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Use the 'title' property to render a page title  -->
+	<title><%= title %></title>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    
+</head>
+<body>
+	<!-- Load the static image file  -->
+
+	<form action="/users" method="post">
+        
+            <!-- Use the 'title' property to render a title element  -->
+            <div class="card text-center">
+                <h1 style="background-color:gainsboro;">  <%= title %> </h1>
+               </div>
+            <div class="form-row col-md-offset-3">
+                    <div class="form-group col-md-4">
+                      <label for="firstName">First Name</label>
+                      <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name" >
+                    </div>
+                    <div class="form-group col-md-4 offset-md-4">
+                      <label for="lastName">Last Name</label>
+                      <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last Name">
+                    </div>
+                  </div>
+                  <div class="form-row col-md-6 col-md-offset-3">
+                  <div class="form-group">
+                    <label for="inputAddress">Email</label>
+                    <input type="email" class="form-control" name="email" id="inputAddress">
+                  </div>
+                  </div>
+                  <br>
+                  <div class="form-row col-md-6 col-md-offset-3">
+                        <div class="form-group col-md-6" style="padding-left:0px;">
+                          <label for="password">Password</label>
+                          <input type="password" class="form-control" name="password" id="password" placeholder="Password" >
+                        </div>
+                        <div class="form-group col-md-6" style="padding-right: 0px;">
+                          <label for="cPassword">Confirm Password</label>
+                          <input type="password" class="form-control" id="cPassword" placeholder="Password">
+                        </div>
+                      </div>
+                      <div class="form-row col-md-6 col-md-offset-3">
+                            <div class="form-group">
+                              <label for="skills">Technical skills</label>
+                              <input type="text" class="form-control" id="skills" name="skill" placeholder="Java , Jquery">
+                            </div>
+                        </div>
+                        <div class="form-row col-md-6 col-md-offset-3">
+                                <div class="form-group">
+                                  <label for="website">Website</label>
+                                 
+                                  <input type="text" class="form-control" id="website" name="website" placeholder="http://www.myweb.com">
+                                </div>
+                            </div>
+                      <div class="form-row col-md-6 col-md-offset-3" style="margin-top: 1em;">
+                            <button type="submit" class="btn btn-primary  btn-lg btn-block">Sign Up</button>
+                            </div>
+       
+</form>
+
+
+
+
+</body>
+</html>

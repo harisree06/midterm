@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"></html>
+<head>
+    <meta charset="utf-8" />
+    <title><%= title %> </title>
+    <link rel="stylesheet" type="text/css" href="css/display.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js">
+    </script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js">
+        </script>
+        <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js">
+        </script>
+    
+
+</head>
+<body>
+<script>
+ $(document).ready(function() {
+    $('#example').DataTable({
+        "pageLength": 5,
+        "aLengthMenu": [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]]
+    } );
+} );
+</script>
+  <div class="card text-center">
+        <h1 style="background-color:gainsboro;"> List of Users</h1>
+       </div>
+        <div style="width: 70%; margin: auto; margin-top: 2em;">
+       
+        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                
+
+        <thead>
+                <th scope="col">
+                        <div>
+                            <label>Email</label>
+                        </div>
+                    </th>
+            <th scope="col">
+                <div>
+                    <label>First Name</label>
+                </div>
+
+            </th >
+            <th scope="col">
+
+                <div>
+                    <label>Last Name</label>
+
+                </div>
+
+            </th>
+           <th scope="col">
+                <div>
+
+                    <label>Website </label>
+                </div>
+
+            </th>
+
+           <th scope="col">
+                <div>
+                    <label>Skill </label>
+                </div>
+
+            </th>
+           <th scope="col">
+                    <div>
+                        <label>Admin </label>
+                    </div>
+    
+                </th>
+               <th scope="col">
+                        <div>
+                            <label>Feedback </label>
+                        </div>
+        
+                    </th>
+           <th scope="col">
+                <div>
+                    <label>Created </label>
+                </div>
+
+            </th>
+        </thead>
+
+
+        <% users.forEach(function(user){ %>
+
+        <tr>
+                <td>
+                        <%= user.email %>
+                </td>
+            <td>
+                <%= user.firstName %>
+
+            </td>
+            <td>
+                <%= user.lastName %>
+
+            </td>
+            
+            <td>
+                <%= user.website %>
+            </td>
+            <td>
+                <%= user.skill %>
+                </td>
+            <td>
+                <%= user.isAdmin %>
+            </td>
+            <td>
+                <%= user.feedback %>
+                
+            </td>
+
+            <td>
+                    <%= moment(user.created).format( 'MMM-DD-YYYY') %>
+
+            </td>
+            
+
+        </tr>
+
+        <% })%>
+
+    </table>
+
+</div>
+
+</body>
+</html>
