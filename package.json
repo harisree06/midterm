@@ -3,6 +3,7 @@
 	"version": "0.0.5",
 	"dependencies": {
 		"body-parser": "1.15.2",
+		"bootstrap": "^4.0.0",
 		"compression": "1.6.0",
 		"datatables.net": "^1.10.16",
 		"ejs": "2.5.2",

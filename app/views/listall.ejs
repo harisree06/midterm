@@ -5,7 +5,9 @@
     <meta charset="utf-8" />
     <title><%= title %> </title>
     <link rel="stylesheet" type="text/css" href="css/display.css" />
+    
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script src="https://code.jquery.com/jquery-1.12.4.js">
     </script>
@@ -25,7 +27,9 @@
     } );
 } );
 </script>
+    <a href="/">Home</a>
   <div class="card text-center">
+        
         <h1 style="background-color:gainsboro;"> List of Users</h1>
        </div>
         <div style="width: 70%; margin: auto; margin-top: 2em;">
@@ -36,89 +40,67 @@
         <thead>
                 <th scope="col">
                         <div>
-                            <label>Email</label>
+                            <label>Survey Id</label>
                         </div>
                     </th>
             <th scope="col">
                 <div>
-                    <label>First Name</label>
+                    <label>Game Genre</label>
                 </div>
 
             </th >
             <th scope="col">
 
                 <div>
-                    <label>Last Name</label>
+                    <label>Game Played per year</label>
 
                 </div>
 
             </th>
+           
+         
+               
            <th scope="col">
                 <div>
-
-                    <label>Website </label>
+                    <label>Age</label>
                 </div>
 
             </th>
+                
 
-           <th scope="col">
-                <div>
-                    <label>Skill </label>
-                </div>
-
-            </th>
-           <th scope="col">
+            <th scope="col">
                     <div>
-                        <label>Admin </label>
+                        <label>Action</label>
                     </div>
     
                 </th>
-               <th scope="col">
-                        <div>
-                            <label>Feedback </label>
-                        </div>
-        
-                    </th>
-           <th scope="col">
-                <div>
-                    <label>Created </label>
-                </div>
-
-            </th>
         </thead>
 
 
-        <% users.forEach(function(user){ %>
+        <% surveys.forEach(function(survey){ %>
 
         <tr>
                 <td>
-                        <%= user.email %>
+                        <%= survey.surveyId %>
                 </td>
             <td>
-                <%= user.firstName %>
+                <%= survey.gameGenre %>
 
             </td>
             <td>
-                <%= user.lastName %>
+                <%= survey.daysPerYear %>
 
             </td>
             
             <td>
-                <%= user.website %>
-            </td>
-            <td>
-                <%= user.skill %>
-                </td>
-            <td>
-                <%= user.isAdmin %>
-            </td>
-            <td>
-                <%= user.feedback %>
-                
+                <%= survey.age %>
+
             </td>
 
+
             <td>
-                    <%= moment(user.created).format( 'MMM-DD-YYYY') %>
+                <a href="/newsurvey/<%= survey.surveyId%>"><button type="button" class="btn btn-info">Update</button></a> | 
+                <a href="/deletesurvey/<%= survey.surveyId%>"><button type="button" class="btn btn-info">Delete</button></a>
 
             </td>
             
@@ -131,5 +113,4 @@
 
 </div>
 
-</body>
-</html>
+<% include ./partials/footer.ejs %>

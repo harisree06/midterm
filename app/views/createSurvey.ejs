@@ -1,0 +1,88 @@
+<head>
+        <title><%= title %></title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        
+        </head>
+        <body>
+        <div class="container centerDiv">
+        
+        <div class="card text-center">
+         <h1 style="background-color:gainsboro;">  <%= title %> </h1>
+        </div>
+    
+        
+          <% if (survey) { %>
+            <a href="/">Home</a>
+            <form action="/updateSurvey" method="POST">
+             
+            <div class="form-row col-md-6 col-md-offset-3">
+            <div class="form-group">
+              <label for="inputAddress">Survey ID</label>
+              <input type="text" class="form-control" id="inputAddress" name="surveyId" value="<%=survey.surveyId %>">
+            </div>
+            </div>
+            <div class="form-row col-md-6 col-md-offset-3">
+            <div class="form-group">
+              <label for="gameGenre">Game Genre</label>
+              <input type="text" class="form-control" id="gameGenre" name="gameGenre" placeholder="Game Genre" value="<%=survey.gameGenre%>">
+            </div>
+        </div>
+        <div class="form-row col-md-6 col-md-offset-3">
+            <div class="form-group">
+                <label for="daysPerYear">Game played per year:</label>
+                <input type="text" name="daysPerYear" class="form-control" id="daysPerYear" placeholder="Enter the number of games played per year" value="<%=survey.daysPerYear%>">
+                </div>
+        </div>
+        <div class="form-row col-md-6 col-md-offset-3">
+          <div class="form-group">
+              <label for="age">Age:</label>
+              <input type="text" name="age" class="form-control" id="age" placeholder="Enter Age" value="<%=survey.age%>">
+              </div>
+      </div>
+       
+
+            <div class="form-row col-md-6 col-md-offset-3" style="margin-top: 1em;">
+            <button type="submit" class="btn btn-primary  btn-lg btn-block">Update survey</button>
+            </div>
+          </form>
+
+            <% } else { %>
+              <a href="/">Home</a>
+            <form action="/createSurvey" method="POST">
+              <div class="container">
+                <div class="form-row">
+                   <div class="form-group col-md-2">
+                    <label for="inputAddress">Survey ID</label>
+                    <input type="text" class="form-control" id="inputAddress" name="surveyId"></div>
+                
+                    <div class="form-group col-md-2">
+                      <label for="gameGenre">Game Genre</label>
+                    <input type="text" class="form-control" id="gameGenre" name="gameGenre" placeholder="Game Genre"> </div>
+
+                    <div class="form-group col-md-2">
+
+                    <label for="daysPerYear">Game played per year:</label>
+                    <input type="text" name="daysPerYear" class="form-control" id="daysPerYear" placeholder="Enter the number of games played per year">
+                   
+                  </div>
+                  <div class="form-group col-md-2">
+
+                    <label for="age">Age:</label>
+                    <input type="text" name="age" class="form-control" id="age" placeholder="Enter Age">
+                    
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label></label>
+                    <button type="submit" style="margin-top: 8%; height: 2.5em;"class="btn btn-primary  btn-lg btn-block">Add survey</button>
+            
+                  </div>
+                </div>
+              </div>
+              
+        
+          </form>
+          <% } %>
+         
+      </div>
+    </body>

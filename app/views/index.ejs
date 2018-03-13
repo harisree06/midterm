@@ -1,47 +1,18 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-<title><%= title %></title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/style.css" />
+﻿<% include ./partials/header.ejs %>
 
-</head>
-<body class="container">
-		<h1 style="margin-bottom: 50px">  <%= title %> </h1>
-	<div class="card">
-		<div class="card-body"> 
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
-						<form method = "post"  action="/feedback">
-							<div class="form-group ">
-								<% if(user.length > 0){ %>
-									<input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="email" value= <%=user%>>
-								<% } else{ %>
-									<input type="email" class="form-control" id="inputEmail3" placeholder="Email"  name="email">
-								<% } %>	
-							</div>
 
-							<div class="form-group ">
-								<input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="password" required>
-							</div>
-							<div class="form-group ">
-								<button type="submit" class="btn btn-primary btn-lg btn-block" name="submit">Login</button>
-							</div>				
-						</form>
-					</div>
-					
-					<div class="col-sm-6">
-						<div style="text-align: center">
-						<h6>Are u new here, feel free to sign up &#x26FA;</h6>
-						<h6>its free </h6>
-					    </div>
-						<a href="/add_user"><button type="button" class="btn btn-primary btn-lg btn-block" name="signup">SignUp</button></a>
-					</div>
-				</div>
-		    </div>
-	    </div>
-	</div>
-</body>
+<!-- Content Area -->
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-auto">
+        <h1>
+          <%= title %>
+        </h1>
+        <p>Welcome to
+          <%= title %>
+        </p>
+      </div>
+    </div>
+  </div>
 
-</html>
+  <% include ./partials/footer.ejs %>

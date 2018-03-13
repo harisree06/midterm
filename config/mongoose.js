@@ -8,7 +8,7 @@ module.exports = function() {
 	const db = mongoose.connect(config.db);
 
 	// Load the 'User' model 
-	require('../app/models/user.server.model');
+	require('../app/models/survey.server.model');
 
 	// Return the Mongoose connection instance
 	return db;

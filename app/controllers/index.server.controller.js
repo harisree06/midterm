@@ -10,18 +10,10 @@ exports.render = function(req, res) {
 
 	// Use the 'response' object to render the 'index' view with a 'title' property
 	res.render('index', {
-        title: 'Login',
-        user : ''
+        title: 'Home',
+    
 	});
 };
 
-exports.renderAddUser = function (req, res) {
-    
-    // Use the 'response' object to render the 'add_user' view with a 'title' property
-    res.render('signUp', {
-        title: 'Sign Up'
-    });
-    //you may also render an html form
-    //res.render('add_user.html');
-};
+
 
